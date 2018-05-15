@@ -60,15 +60,15 @@ app.get('/', (req, res) => {
 });
 
 //firebase connection check
-var fireConnection = firebase.database.ref('.info/connected');
-fireConnection.on("value", (con) => {
-    if (con.val() === true) {
-        console.log("Connected to Firebase...");
-    }
-    else {
-        console.log("Not connected to Firebase!");
-    }
-});
+// var fireConnection = firebase.database.ref('.info/connected');
+// fireConnection.on("value", (con) => {
+//     if (con.val() === true) {
+//         console.log("Connected to Firebase...");
+//     }
+//     else {
+//         console.log("Not connected to Firebase!");
+//     }
+// });
 
 // app.listen(port, () => {
 //     console.log(`Server running on port ${port}.`);
