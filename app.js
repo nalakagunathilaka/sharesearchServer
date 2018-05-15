@@ -11,9 +11,11 @@ const socketIO = require('socket.io');
 const port = process.env.PORT || 3000;
 const app = express();
 const server = http.Server(app);
-server.listen(port, () => {
-    console.log(`Server running on port ${port}.`);
-});
+// server.listen(port, () => {
+//     console.log(`Server running on port ${port}.`);
+// });
+app.listen(port, () => {console.log("Server running on port ${port}")});
+
 
 app.use(cors());
 app.use(bodyParser.json());
