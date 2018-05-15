@@ -11,9 +11,9 @@ const socketIO = require('socket.io');
 const port = process.env.PORT || 3000;
 const app = express();
 const server = http.Server(app);
-// server.listen(port, () => {
-//     console.log(`Server running on port ${port}.`);
-// });
+server.listen(port, () => {
+    console.log(`Server running on port ${port}.`);
+});
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -34,7 +34,7 @@ io.sockets.on('connection', (socket) => {
             // socket.broadcast.to(info.key).emit('message', snapshot.val());
             io.sockets.in(info.key).emit('message', snapshot.val());
         });
-        // io.emit('chat', msg)
+
     });
 
 
@@ -83,4 +83,4 @@ function onConnection(socket){
 
 io.on('connection whiteboard', onConnection);
 
-app.listen(port, () => {console.log("Server running on port ${port}")});
+// app.listen(port, () => {console.log("Server running on port ${port}")});
