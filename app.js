@@ -48,7 +48,7 @@ io.sockets.on('connection', (socket) => {
 //routes
 const users = require('./routes/Users');
 const research = require('./routes/Research');
-const chat = require('./routes/chat');
+const chat = require('./routes/Chat');
 
 
 app.use('/users', users);
@@ -59,16 +59,16 @@ app.get('/', (req, res) => {
     console.log("Invalid")
 });
 
-//firebase connection check
-// var fireConnection = firebase.database.ref('.info/connected');
-// fireConnection.on("value", (con) => {
-//     if (con.val() === true) {
-//         console.log("Connected to Firebase...");
-//     }
-//     else {
-//         console.log("Not connected to Firebase!");
-//     }
-// });
+// firebase connection check
+var fireConnection = firebase.database.ref('.info/connected');
+fireConnection.on("value", (con) => {
+    if (con.val() === true) {
+        console.log("Connected to Firebase...");
+    }
+    else {
+        console.log("Not connected to Firebase!");
+    }
+});
 
 // app.listen(port, () => {
 //     console.log(`Server running on port ${port}.`);
