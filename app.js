@@ -14,8 +14,6 @@ const server = http.Server(app);
 // server.listen(port, () => {
 //     console.log(`Server running on port ${port}.`);
 // });
-app.listen(port, () => {console.log("Server running on port ${port}")});
-
 
 app.use(cors());
 app.use(bodyParser.json());
@@ -84,3 +82,5 @@ function onConnection(socket){
 }
 
 io.on('connection whiteboard', onConnection);
+
+app.listen(port, () => {console.log("Server running on port ${port}")});
