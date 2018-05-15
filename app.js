@@ -46,8 +46,8 @@ io.sockets.on('connection', (socket) => {
 
 
 //routes
-const users = require('./Routes/Users');
-const research = require('./Routes/Research');
+const users = require('./routes/Users');
+const research = require('./routes/Research');
 const chat = require('./routes/chat');
 
 
